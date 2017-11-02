@@ -1,0 +1,15 @@
+@mixin buttonStyle ($color) {
+    background-color: $color;
+    border-radius:20px;
+    color: white; 
+    font-size:19px;
+    padding:8px 30px;
+    border: 2px solid $color;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: 0.4s background-color; 
+    &:hover {
+        background-color: white;
+        color: $color;
+    }
+}
