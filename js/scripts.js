@@ -1,45 +1,43 @@
 (function() {
 	document.addEventListener('DOMContentLoaded', function() {
+
+		//slider 
+		
 		var buttonLeft = document.querySelector(".left");
 		console.log(buttonLeft);
 		var buttonRight = document.querySelector(".right");
 		console.log(buttonRight);
 		var slider = document.querySelector(".slider-container");
 		console.log(slider);
-		var listElements = document.querySelectorAll(".slider-container li");
-		console.log(listElements);
-
+		var slides = slider.querySelectorAll(".slide");
+		console.log(slides);
 		var slideIndex = 0;
-		listElements[0].classList.add("visible");
 		
 		buttonRight.addEventListener("click", function(){
-			if (slideIndex >= listElements.length-1) {
-				listElements[slideIndex].classList.add("visible")
+			if (slideIndex >= slides.length - 1) {
+				slides[slideIndex].classList.add("active")
 			} else {
-				listElements[slideIndex].classList.remove("visible");
+				slides[slideIndex].classList.remove("active");
 				slideIndex = slideIndex + 1;
-				listElements[slideIndex].classList.add("visible");
+				slides[slideIndex].classList.add("active");
 			}
 		
 		})
 		
 		buttonLeft.addEventListener("click", function(){
 			if (slideIndex <= 0) {
-				listElements[slideIndex].classList.add("visible")
+				slides[slideIndex].classList.add("active")
 			} else {
-				listElements[slideIndex].classList.remove("visible");
+				slides[slideIndex].classList.remove("active");
 				slideIndex = slideIndex -1;
-				listElements[slideIndex].classList.add("visible");
+				slides[slideIndex].classList.add("active");
 			}
 		})
 
+		//boxes - picture description dissapearing 
+
 		var myBoxes = document.querySelectorAll(".box-for-pic");
 		console.log(myBoxes);
-		// var imagesSection = document.querySelectorAll(".boxes img")
-		// console.log(imagesSection);
-		// var pictureTitles = document.querySelectorAll(".boxes .picture-title")
-		// console.log(pictureTitles);
-
 		for (var i=0; i<myBoxes.length; i++) {
 			myBoxes[i].addEventListener("mouseover", function(){
 				var myBoxesChild = this.firstElementChild;

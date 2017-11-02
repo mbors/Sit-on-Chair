@@ -8,6 +8,7 @@
     text-decoration: none;
     margin-bottom: 20px;
     transition: 0.4s background-color; 
+    outline: none; 	
     &:hover {
         background-color: white;
         color: $color;

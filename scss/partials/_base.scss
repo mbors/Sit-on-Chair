@@ -52,7 +52,18 @@ header {
 	margin-top: 10px;
 	display:none;
 	position: absolute; 
-	font-size: 12px;	
+	font-size: 12px;
+	&::after {
+		content: "";
+		display: inline-block; 
+		width: 0px;
+		height: 0px;
+		border: 8px solid $myGreen; 
+		position: absolute; 
+		transform: rotate(45deg);
+		margin-top: -80px;
+		margin-left: -35px;
+	}	
 }
 
 
@@ -69,19 +80,18 @@ header {
 	position: relative;
 	height: 450px;
 	background: $myGradient; 
-	border: 2px solid yellow;
 	.container {
 		height: 100%;
-		border: 2px solid red;
 		.slider-container {
 			position: relative;
 			height: 100%;
 			width: 800px;
-			border: 2px solid blue; 
-			li {
+			.slide {
 				display: none;
 			}
-			.visible {
+			.active {
+				width: 700px;
+				height: 400px;
 				display: flex;
 				align-items: center; 
 				justify-content: center; 
@@ -94,11 +104,11 @@ header {
 
 .text-slide {
 	height: 200px; 
+	width: 300px;
 	display: flex;
 	flex-direction: column; 
 	justify-content: center;
 	align-items: center; 
-	border: 2px solid green; 
 	h { 
 		color: $myGreen; 
 		font-size: 40px; 
@@ -131,7 +141,7 @@ header {
 	outline: none; 
 }
 
-//trzecia sekcja 
+//boxes
 
 .box-for-pic {
 	margin-top: 50px;
@@ -262,6 +272,8 @@ header {
 	}
 }
 
+//price calculator
+
 //form
 .contact-us {
 	font-size: 25px;
@@ -336,15 +348,28 @@ input[type="message"] {
 		@include buttonStyle($myGreen);
 	}
 }
-
+//checkbox
+.agreement {
+	margin-left: 70px;
+	margin-top: -45px;
+	margin-bottom: 40px;
+}
 input[type="checkbox"] {
-	margin-right: 295px;
-	// opacity: 0;
-	// width: 0;
-	// margin: 0;
+	opacity: 0;
+}
+label[for="agree"] {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border: 1px solid $myGreen; 
+	background: url(../images/form_ok.jpg) -8000px no-repeat;
+	margin-right: 270px;
 }
 
-
+input:checked + label[for="agree"] {
+	background-position: center center; 
+	color: $myGreen; 
+}
 
 //footer 
 footer {
