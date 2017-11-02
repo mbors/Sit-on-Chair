@@ -33,21 +33,23 @@
 			}
 		})
 
-		var imagesSection = document.querySelectorAll(".boxes img")
-		console.log(imagesSection);
-		var pictureTitles = document.querySelectorAll(".boxes .picture-title")
-		console.log(pictureTitles);
+		var myBoxes = document.querySelectorAll(".box-for-pic");
+		console.log(myBoxes);
+		// var imagesSection = document.querySelectorAll(".boxes img")
+		// console.log(imagesSection);
+		// var pictureTitles = document.querySelectorAll(".boxes .picture-title")
+		// console.log(pictureTitles);
 
-		for (var i=0; i<pictureTitles.length; i++) {
-			pictureTitles[i].addEventListener("mouseover", function(){
-				this.classList.toggle("aloha")
-				console.log("hej")
+		for (var i=0; i<myBoxes.length; i++) {
+			myBoxes[i].addEventListener("mouseover", function(){
+				var myBoxesChild = this.firstElementChild;
+				myBoxesChild.classList.add("aloha");
 			})
 		}
-		for (var i=0; i<pictureTitles.length; i++) {
-			pictureTitles[i].addEventListener("mouseout", function(){
-				this.classList.toggle("aloha")
-				console.log("mm")
+		for (var i=0; i<myBoxes.length; i++) {
+			myBoxes[i].addEventListener("mouseout", function(){
+				var myBoxesChild = this.firstElementChild;
+				myBoxesChild.classList.remove("aloha");
 			})
 		}
 	});

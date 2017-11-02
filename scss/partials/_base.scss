@@ -19,10 +19,10 @@ header {
 				padding-right: 5px;
 			}
 		}
-		.header-nav {
-			@media (max-width: 760px) {
-				display: none;
-			}
+		// .header-nav {
+		// 	@media (max-width: 760px) {
+		// 		display: none;
+		// 	}
 			ul {
 				margin-left: 150px;
 				li {
@@ -39,7 +39,7 @@ header {
 					}
 				}
 			}
-		}
+		// }
 	}
 }
 
@@ -69,12 +69,15 @@ header {
 	position: relative;
 	height: 450px;
 	background: $myGradient; 
+	border: 2px solid yellow;
 	.container {
 		height: 100%;
+		border: 2px solid red;
 		.slider-container {
 			position: relative;
-			height: 420px;
+			height: 100%;
 			width: 800px;
+			border: 2px solid blue; 
 			li {
 				display: none;
 			}
@@ -95,6 +98,7 @@ header {
 	flex-direction: column; 
 	justify-content: center;
 	align-items: center; 
+	border: 2px solid green; 
 	h { 
 		color: $myGreen; 
 		font-size: 40px; 
@@ -129,8 +133,22 @@ header {
 
 //trzecia sekcja 
 
+.box-for-pic {
+	margin-top: 50px;
+	display: flex; 
+	align-items: center; 
+	height: 200px;
+}
+
+.number2 {
+	background: url(../images/box2_img.jpg) no-repeat;
+}
+.number3, .number1 {
+	background: url(../images/box1_img.jpg) no-repeat;
+}
+
 .picture-description {
-	margin-top: -80px;
+	margin-top: 40px;
 	margin-left: 10px;
 	position: relative;
 	.picture-title {
