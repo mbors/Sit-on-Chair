@@ -15,7 +15,10 @@
 		
 		buttonRight.addEventListener("click", function(){
 			if (slideIndex >= slides.length - 1) {
-				slides[slideIndex].classList.add("active")
+				slides[slideIndex].classList.remove("active");
+				slideIndex = 0;
+				slides[slideIndex].classList.add("active");
+				
 			} else {
 				slides[slideIndex].classList.remove("active");
 				slideIndex = slideIndex + 1;
@@ -26,13 +29,16 @@
 		
 		buttonLeft.addEventListener("click", function(){
 			if (slideIndex <= 0) {
-				slides[slideIndex].classList.add("active")
+				slides[slideIndex].classList.remove("active"); 
+				slideIndex = slides.length - 1;
+				slides[slideIndex].classList.add("active");
 			} else {
 				slides[slideIndex].classList.remove("active");
 				slideIndex = slideIndex -1;
 				slides[slideIndex].classList.add("active");
 			}
 		})
+		
 
 		//boxes - picture description dissapearing 
 
