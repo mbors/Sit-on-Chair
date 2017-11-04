@@ -1,5 +1,21 @@
 (function() {
 	document.addEventListener('DOMContentLoaded', function() {
+		//burger nav
+
+		var burger = document.querySelector(".burger-nav")
+		console.log(burger);
+		var menuNav = document.querySelector(".header-nav");
+		console.log(menuNav);
+		
+		burger.addEventListener("click", function(){
+			var display = menuNav.style.display 
+			if (display === "none") {
+				menuNav.style.display ="inline-block"; 
+			} else {
+				menuNav.style.display="none";
+			}
+		})
+
 
 		//slider 
 		
