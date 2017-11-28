@@ -1,30 +1,24 @@
 (function() {
 	document.addEventListener('DOMContentLoaded', function() {
-		//BURGER_NAV - burger navigation for mobile phones
+		//burger nav
 
-		//finding elements needed to set up the burger navigation 
 		var burger = document.querySelector(".burger-nav")
 		console.log(burger);
 		var menuNav = document.querySelector(".header-nav");
 		console.log(menuNav);
-
-		//function which hides the navigation if displayed & displays the navigation if hidden
-		function navDisplay(){
+		
+		burger.addEventListener("click", function(){
 			var display = menuNav.style.display 
 			if (display === "none") {
 				menuNav.style.display ="inline-block"; 
 			} else {
 				menuNav.style.display="none";
 			}
-		}
-
-		//implementation of the navDisplay function
-		burger.addEventListener("click", navDisplay())
+		})
 
 
-		//SLIDER
+		//slider 
 		
-		//finding elements needed to set up the slider
 		var buttonLeft = document.querySelector(".left");
 		console.log(buttonLeft);
 		var buttonRight = document.querySelector(".right");
@@ -33,11 +27,9 @@
 		console.log(slider);
 		var slides = slider.querySelectorAll(".slide");
 		console.log(slides);
-
 		var slideIndex = 0;
 		
-		//function which allows to browse through slides, to be implemented under the right button
-		function sliderRight(){
+		buttonRight.addEventListener("click", function(){
 			if (slideIndex >= slides.length - 1) {
 				slides[slideIndex].classList.remove("active");
 				slideIndex = 0;
@@ -49,10 +41,9 @@
 				slides[slideIndex].classList.add("active");
 			}
 		
-		}
+		})
 		
-		//function which allows to browse through slides, to be implemented under the left button
-		function sliderLeft() {
+		buttonLeft.addEventListener("click", function(){
 			if (slideIndex <= 0) {
 				slides[slideIndex].classList.remove("active"); 
 				slideIndex = slides.length - 1;
@@ -62,32 +53,24 @@
 				slideIndex = slideIndex -1;
 				slides[slideIndex].classList.add("active");
 			}
-		}
-
-		//implementation of the functions: sliderLeft & sliderRight
-		buttonLeft.addEventListener("click", sliderLeft());
-		buttonRight.addEventListener("click", sliderRight());
+		})
 		
 
-		//BOXES - disappearing description while hovering through pictures 
+		//boxes - picture description dissapearing 
+
 		var myBoxes = document.querySelectorAll(".box-for-pic");
-		
-		//functions which allow the disappearance / appearance of the description when the picture is hovered through 
-		function descriptionDisappear() {
-			var myBoxesChild = this.firstElementChild;
-			myBoxesChild.classList.add("aloha");
-		}
-		function descriptionAppear() {
-			var myBoxesChild = this.firstElementChild;
-			myBoxesChild.classList.remove("aloha");
-		}
-
-		//implementation of the functions
+		console.log(myBoxes);
 		for (var i=0; i<myBoxes.length; i++) {
-			myBoxes[i].addEventListener("mouseover", descriptionDisappear())
+			myBoxes[i].addEventListener("mouseover", function(){
+				var myBoxesChild = this.firstElementChild;
+				myBoxesChild.classList.add("aloha");
+			})
 		}
 		for (var i=0; i<myBoxes.length; i++) {
-			myBoxes[i].addEventListener("mouseout", descriptionAppear())
+			myBoxes[i].addEventListener("mouseout", function(){
+				var myBoxesChild = this.firstElementChild;
+				myBoxesChild.classList.remove("aloha");
+			})
 		}
 	});
 })();
