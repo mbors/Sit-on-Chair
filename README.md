@@ -19,6 +19,6 @@ If you wish to use the project yourself, please install the following gulp packa
 * SASS
 * HTML
 
-##Demo
+## Demo
 https://mbors.github.io/Sit-on-Chair/
 
