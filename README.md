@@ -15,7 +15,10 @@ If you wish to use the project yourself, please install the following gulp packa
 
 ## Built With
 
-* [Vanila JavaScript] 
-* [SASS]
-* [HTML]
+* Vanila JavaScript
+* SASS
+* HTML
+
+##Demo
+
 
